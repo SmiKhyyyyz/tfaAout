@@ -1,11 +1,11 @@
 header{
     width: 100%;
     height: 80px;
-    background-color: black;
     display: flex;
     align-items: center;
     justify-content: end;
     padding: 0 20px;
+    position: absolute;
 }
 .burger{
     display: none;
@@ -16,19 +16,19 @@ header{
         &__el{
             &__liens{
                 display: block;
-                color: white;
+                color: $c-bleu-fonce;
                 font-size: 20px;
                 padding: 10px 25px;
                 border-radius: 50px;
                 transition: 0.2s;
                 margin: 0 5px;
                 &:hover{
-                    color: black;
-                    background: white;
+                    color: $c-blanc;
+                    background: $c-bleu-clair;
                 }
                 &--active{
-                    color: black;
-                    background: white;  
+                    color: $c-blanc;
+                    background: $c-bleu-clair;  
                 }
             }
         }
@@ -40,11 +40,12 @@ header{
     .burger{
         display: block;
         cursor: pointer;
+        z-index: 10;
         &__line{
             transition: 0.2s;
             width: 30px;
             height: 3px;
-            background: white;
+            background: $c-bleu-clair;
             margin: 6px 0;
         }
         &--active{
@@ -72,13 +73,14 @@ header{
         }
     }
     .menu{
+        z-index: 9;
         height: 0;
         position: absolute;
-        top: 80px;
+        top: 0px;
         left: 0;
         right: 0;
         width: 100vw;
-        background: black;
+        background: rgba($color: $c-bleu-fonce , $alpha: 0.2);
         transition: 0.2s;
         overflow: hidden;
         .liste{
