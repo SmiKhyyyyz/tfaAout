@@ -85,12 +85,20 @@ body {
 
   .text{
     padding-bottom: 15px;
+
+    &__lien{
+      color: $c-hover;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
   }
 }
 
 .eti{
   display: flex;
-  background-color: $c-bleu-clair;
+  background-color: $c-hover;
   position: absolute;
   padding: 5px;
   border-radius: 10px;
@@ -134,7 +142,7 @@ body {
 }
 
 .comp__el{
-  border: 3px $c-bleu-clair solid;
+  border: 3px $c-hover solid;
   border-radius: 25px;
   padding: 20px;
   margin-bottom: 30px;
@@ -166,13 +174,14 @@ body {
   .img--proj{
     width: 100%;
     cursor: none;
+    border-radius: 25px;
   }
 
   &__content{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 100%;
+    height: 97.5%;
     width: 100%;
     padding: 20px;
     opacity: 0;
@@ -181,10 +190,11 @@ body {
     position: absolute;
     top: 0;
     left: 0 ;
+    color: $c-blanc;
     &:hover{
       opacity: 1;
       transition: 0.2s;
-      background: linear-gradient(to top, rgba($c-bleu-clair,1), rgba(0,0,0,0) );
+      background: linear-gradient(to top, rgba($c-hover,1), rgba(255, 255, 255, 0));
     }
   }
   &__lien{
@@ -193,9 +203,97 @@ body {
 }
 
 @media (min-width: 901px){
+  
+
+}
+
+@media (min-width: 1200px){
+  body{
+    font-size: $size-text-desktop;
+  }
+
   .section{
+    padding: 50px 20px 75px 20px;
     height: 100vh;
     width: 100vw;
+    grid-template-columns: repeat(11, 1fr);
+
+    &__comp{
+      display: grid;
+    }
+
+    &__pres{
+      grid-template-rows: repeat(3, 1fr);
+    }
+  }
+
+  .title{
+    font-size: $size-title-desktop;
+    grid-column: 2/-1;
+
+    &__princ{
+      font-size: $size-title-desktop-princ;
+    }
+
+    &--comp{
+      font-size: $size-title-phone-comp;
+    }
+  
+    &--projet{
+      font-size: $size-title-phone-comp;
+      color: $c-blanc;
+    }
+  }
+
+  .eti{
+  
+    &--1{
+      top: -30%;
+      left: -45%;
+    }
+    &--2{
+      bottom: -13%;
+      right: -45%;
+    }
+  }
+  .container{
+
+    &__img{
+      grid-column: 8 / -2;
+      align-self: center;
+    }
+
+    &__text{
+      grid-column: 2 / 8;
+      align-self: center;
+    }
+
+    &__comp{
+      grid-column: 3 / -3;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
   }
   
+  .comp__el{
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  }
+
+  .projet{
+
+    &--hw{
+      grid-column: 2/5;
+    }
+    &--rux{
+      grid-column: 5/8;
+    }
+    &--dp{
+      grid-column: 8/-2;
+    }
+  }
 }

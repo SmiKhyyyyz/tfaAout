@@ -25,12 +25,12 @@ header{
                 transition: 0.2s;
                 margin: 0 5px;
                 &:hover{
-                    color: $c-blanc;
-                    background: $c-bleu-clair;
+                    color: $c-bleu-fonce;
+                    background: $c-hover;
                 }
                 &--active{
-                    color: $c-blanc;
-                    background: $c-bleu-clair;  
+                    color: $c-bleu-fonce;
+                    background: $c-hover;
                 }
             }
         }
@@ -38,7 +38,7 @@ header{
 }
 
 
-@media (max-width: 900px){
+@media (max-width: 1200px){
     .burger{
         display: block;
         cursor: pointer;
@@ -47,7 +47,7 @@ header{
             transition: 0.2s;
             width: 30px;
             height: 3px;
-            background: $c-bleu-clair;
+            background: $c-hover;
             margin: 6px 0;
         }
         &--active{
