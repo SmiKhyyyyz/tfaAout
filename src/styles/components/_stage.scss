@@ -1,0 +1,44 @@
+.section__stage{
+    width: 100vw;
+    height: auto;
+    padding: 100px 20px;
+}
+.title{
+
+    &--stage{
+        margin: 50px 0;
+        line-height: 1;
+    }
+
+    &--text{
+        font-size: $size-title-phone-text;
+        font-weight: 400;
+    }
+}
+
+.container__text--stage{
+    grid-column: 1 / -1;
+}
+
+@media (min-width: 900px){ 
+    .container__text--stage{
+        grid-column: 2 / -2;
+    }
+    .title{
+        &--text{
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media(min-width: 1200px){
+    .container__text--stage{
+        grid-column: 2 / -4;
+    }
+    .title{
+        &--text{
+            font-size: $size-title-desktop-text;
+            margin-bottom: 10px;
+        }
+    }
+}

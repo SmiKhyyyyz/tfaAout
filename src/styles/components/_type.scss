@@ -53,7 +53,7 @@ body {
     transform: translate(-50%, -50%);
 
     span{
-      line-height: 0.7; 
+      line-height: 0.7;
     }
   }
 
@@ -63,6 +63,7 @@ body {
 
   &--projet{
     font-size: $size-title-phone-comp;
+    color: $c-blanc;
   }
 }
 
@@ -88,9 +89,12 @@ body {
 
     &__lien{
       color: $c-hover;
+      cursor: pointer;
 
-      &:hover{
+      &:hover,
+      :focus{
         text-decoration: underline;
+        cursor: pointer;
       }
     }
   }
@@ -181,30 +185,71 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 97.5%;
+    height: 98.5%;
     width: 100%;
     padding: 20px;
-    opacity: 0;
     transition: 0.2s;
     border-radius: 25px;
     position: absolute;
     top: 0;
     left: 0 ;
     color: $c-blanc;
-    &:hover{
-      opacity: 1;
-      transition: 0.2s;
-      background: linear-gradient(to top, rgba($c-hover,1), rgba(255, 255, 255, 0));
-    }
+    background: linear-gradient(to top, $c-hover, rgba(255, 255, 255, 0));
   }
   &__lien{
     color: $c-noir;
   }
 }
 
-@media (min-width: 901px){
-  
+@media (min-width: 901px) and (max-width: 1199px){
+  .section{
+    grid-template-columns: repeat(9, 1fr);
+    gap: 20px;
+    padding: 50px 20px;
+  }
+  .projet{
+    grid-column: 3 / -3;
+    &__content{
+      height: 99.5%;
+    }
+  }
+  .title{
+    margin-bottom: 35px;
+    font-size: $size-title-tablet;
 
+    &__princ{
+      font-size: $size-title-tablet-princ;
+    }
+
+    &--comp{
+      margin-bottom: 15px;
+      font-size: $size-title-phone-comp;
+    }
+
+    &--projet{
+      color: $c-blanc;
+      margin-bottom: 10px;
+    }
+  }
+  .eti{
+    &--1{
+      left: -27%;
+      top: -14%;
+    }
+    &--2{
+      bottom: -3%;
+      right: -27%;
+    }
+  }
+
+  .container{
+    &__text{
+      grid-column: 2 / 7;
+    }
+    &__img{
+      grid-column: 7 / -2;
+    }
+  }
 }
 
 @media (min-width: 1200px){
@@ -248,8 +293,8 @@ body {
   .eti{
   
     &--1{
-      top: -30%;
-      left: -45%;
+      top: -28%;
+      left: -43%;
     }
     &--2{
       bottom: -13%;
@@ -294,6 +339,18 @@ body {
     }
     &--dp{
       grid-column: 8/-2;
+    }
+
+    &__content{
+      height: 97.5%;
+    opacity: 0;
+    transition: 0.2s;
+
+    &:hover{
+      opacity: 1;
+      transition: 0.2s;
+      background: linear-gradient(to top, $c-hover, rgba(255, 255, 255, 0));
+    }
     }
   }
 }
