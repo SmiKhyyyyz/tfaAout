@@ -1,0 +1,21 @@
+.container__text--pres,
+.comp__el--adobe,
+.comp__el--web,
+.comp__el--figma,
+.comp__el--gpt,
+.title__anim{
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.container__title{
+    opacity: 0;
+    transition: 0.5s ease-out;
+}
+.projet--hw,
+.projet--rux,
+.projet--dp {
+  opacity: 0; // Invisibles au départ
+  transform: translateX(-100px); // Déplacées vers la gauche au départ
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; // Transition pour l'animation
+}

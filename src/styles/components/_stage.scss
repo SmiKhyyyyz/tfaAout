@@ -6,7 +6,6 @@
 .title{
 
     &--stage{
-        margin: 50px 0;
         line-height: 1;
     }
 
@@ -36,6 +35,10 @@
         grid-column: 2 / -4;
     }
     .title{
+        &--stage{
+            margin: 50px 0;
+            line-height: 1;
+        }
         &--text{
             font-size: $size-title-desktop-text;
             margin-bottom: 10px;

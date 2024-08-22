@@ -8,10 +8,7 @@ burger.addEventListener('click', () => {
     burger.classList.toggle("burger--active");
 })
 
-
-
 // Canva
-
 
 document.addEventListener("DOMContentLoaded", function() {
     // Vérifie si l'on est sur la page index.html
@@ -34,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         function getRadius() {
             if (window.innerWidth <= 480) {
-                return { r1: 50, r2: 75, r3: 60, r4: 80 };
+                return { r1: 50, r2: 75, r3: 60, r4: 80, r5: 60, r6: 85, r7: 70, r8: 90 };
             } else if (window.innerWidth <= 768) {
                 return { r1: 100, r2: 160, r3: 125, r4: 140, r5: 150, r6: 75, r7: 50, r8: 60 };
             } else {
@@ -92,13 +89,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         function explodeCircle(circle) {
             const explodeInterval = setInterval(() => {
-                circle.radius += 2; // Agrandit légèrement le cercle
-                circle.opacity -= 0.05; // Diminue progressivement l'opacité
+                circle.radius += 2;
+                circle.opacity -= 0.05;
                 if (circle.opacity <= 0) {
                     clearInterval(explodeInterval);
                     const index = circles.indexOf(circle);
                     if (index > -1) {
-                        circles.splice(index, 1); // Retire le cercle une fois l'explosion terminée
+                        circles.splice(index, 1);
                     }
                 }
             }, 20);
@@ -108,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
             for (const circle of circles) {
                 const distance = Math.sqrt((x - circle.x) ** 2 + (y - circle.y) ** 2);
                 if (distance < circle.radius) {
-                    circle.opacity = 1; // Définit l'opacité initiale
+                    circle.opacity = 1;
                     explodeCircle(circle);
                     break;
                 }
@@ -144,9 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-
 //Random couleur
-
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -155,4 +150,87 @@ document.addEventListener("DOMContentLoaded", function () {
     const randomColor = hoverColors[Math.floor(Math.random() * hoverColors.length)];
     
     document.documentElement.style.setProperty('--c-hover', randomColor);
+});
+
+// GSAP
+
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".container__text--pres", {
+    scrollTrigger: {
+        trigger: ".container__text--pres",
+        start: "top 80%",
+        end: "top 30%",
+        toggleActions: "play none none none",
+    },
+    opacity: 1,
+    x: 0,
+    duration: 0.5
+});
+
+const elements = gsap.utils.toArray(".comp__el--adobe, .comp__el--web, .comp__el--figma, .comp__el--gpt");
+
+elements.forEach((el, index) => {
+    gsap.to(el, {
+    scrollTrigger: {
+        trigger: el,
+        start: "top 95%",
+        end: "top 15%",
+        toggleActions: "play none none none",
+    },
+    opacity: 1,
+    x: 0,
+    duration: 1,
+    delay: index * 0.2
+    });
+});
+
+gsap.to(".container__title", {
+    scrollTrigger: {
+        trigger: ".container__title",
+        start: "top 80%",
+        end: "top 30%",
+        toggleActions: "play none none none",
+    },
+    opacity: 1,
+    duration: 0.5
+});
+
+gsap.utils.toArray(".title__anim--1, .title__anim--2, .title__anim--3").forEach((element, index) => {
+    gsap.to(element, {
+        scrollTrigger: {
+        trigger: element,
+        start: "top 80%",
+        end: "top 30%",
+        toggleActions: "play none none none",
+    },
+        opacity: 1,
+        x: 0,
+        duration: 0.3
+    });
+});
+
+
+gsap.utils.toArray(".projet--hw, .projet--rux, .projet--dp").forEach((element) => {
+    gsap.fromTo(element, 
+    {
+        opacity: 0,
+        x: -100,
+    }, 
+    {
+    scrollTrigger: {
+        trigger: element,
+        start: "top 80%",
+        end: "top 30%",
+        toggleActions: "play none none none",
+    },
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.out"
+    }
+);
 });
