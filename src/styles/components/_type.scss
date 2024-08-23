@@ -12,6 +12,7 @@ body {
   line-height: 1.5;
   color: $c-noir;
   background-color: $c-blanc-casse;
+  overflow-x: hidden;
 }
 
 .section{
@@ -256,7 +257,15 @@ body {
     }
   }
 }
-
+@media(min-width: 901px){
+  .section{
+    min-height: 100vh;
+    height: auto;
+    &__pres{
+      height: 100vh;
+    }
+  }
+}
 @media (min-width: 1200px){
   body{
     font-size: $size-text-desktop;
@@ -264,7 +273,6 @@ body {
 
   .section{
     padding: 50px 20px 75px 20px;
-    height: 100vh;
     width: 100vw;
     grid-template-columns: repeat(11, 1fr);
 
