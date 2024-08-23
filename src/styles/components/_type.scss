@@ -20,6 +20,7 @@ body {
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   padding: 20px 20px 75px 20px;
+  background-color: $c-blanc-casse;
 
   &__intro{
     padding: 0 0 75px 0;

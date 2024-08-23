@@ -11,7 +11,7 @@ burger.addEventListener('click', () => {
 // Canva
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Vérifie si l'on est sur la page index.html
+
     if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
@@ -234,3 +234,10 @@ gsap.utils.toArray(".projet--hw, .projet--rux, .projet--dp").forEach((element) =
     }
 );
 });
+
+
+
+
+
+
+
