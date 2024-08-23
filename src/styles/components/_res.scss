@@ -7,9 +7,9 @@
         display: block;
         left: 20px;
         bottom: 70px;
+        z-index: 10000;
         &__list{
             padding: 0;
-            z-index: 1000;
             &__el{
                 list-style-type: none;
                 font-size: 0;

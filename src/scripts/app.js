@@ -12,7 +12,7 @@ burger.addEventListener('click', () => {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
+    if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html') || window.location.pathname === '/projets/tfaaout/') {
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
 
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         function getRandomDirection() {
-            return (Math.random() < 0.5 ? -1 : 1) * 0.2;
+            return (Math.random() < 0.5 ? -1 : 1) * 0.4;
         }
 
         function getRadius() {
@@ -234,10 +234,3 @@ gsap.utils.toArray(".projet--hw, .projet--rux, .projet--dp").forEach((element) =
     }
 );
 });
-
-
-
-
-
-
-

@@ -201,7 +201,11 @@ body {
     color: $c-noir;
   }
 }
-
+@media (min-width: 600px) and (max-width:900px){
+  .projet{
+    grid-column: 2 / -2;
+  }
+}
 @media (min-width: 901px) and (max-width: 1199px){
   .section{
     grid-template-columns: repeat(9, 1fr);
